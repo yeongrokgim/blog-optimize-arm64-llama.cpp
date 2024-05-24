@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/avilaton/add-msg-issue-prefix-hook
+    rev: v0.0.11
+    hooks:
+      - name: hygiene - ticket prefix in commit
+        id: add-msg-issue-prefix
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - name: lint - dockerfile
+        id: hadolint
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.40.0
+    hooks:
+      - name: lint - markdown
+        id: markdownlint
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
+    hooks:
+      - name: hygiene - tab characters
+        id: forbid-tabs
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - name: hygiene - trailing whitespace
+        id: trailing-whitespace
+      - name: hygiene - end-of-file # rationale: https://stackoverflow.com/a/5813359
+        id: end-of-file-fixer
+      - name: lint - yaml
+        id: check-yaml
